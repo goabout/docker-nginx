@@ -12,9 +12,9 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 # Add templating entry point
 
-ADD https://github.com/jcassee/templating-entrypoint/releases/download/0.5.0/entrypoint_linux_amd64 /usr/local/bin/entrypoint
+ADD https://github.com/jcassee/templating-entrypoint/releases/download/0.6.1/entrypoint_linux_amd64 /usr/local/bin/entrypoint
 RUN chmod +x /usr/local/bin/entrypoint
 
-ENTRYPOINT ["entrypoint", "/templates", "/", "--"]
+ENTRYPOINT ["entrypoint", "--"]
 CMD ["nginx", "-g", "daemon off;"]
 
