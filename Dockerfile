@@ -16,5 +16,4 @@ ADD https://github.com/jcassee/parameterized-entrypoint/releases/download/0.7.0/
 RUN chmod +x /usr/local/bin/entrypoint
 
 ENTRYPOINT ["entrypoint", "--"]
-CMD ["nginx", "-g", "daemon off;"]
-
+CMD ["nginx"]
