@@ -7,3 +7,8 @@ This is the Git repo of the Go About Docker image for
 We use
 [jcassee/parameterized-entrypoint](https://github.com/jcassee/parameterized-entrypoint)
 to process templates before starting Nginx.
+
+
+## Environment variables
+
+**NGINX_CONFIG**: If set, append the content to the Nginx configuration.
