@@ -1,16 +1,11 @@
-FROM nginx AS builder
-
-RUN apt-get -qq update && \
-    apt-get -qq install openssl && \
-    openssl dhparam -out /etc/ssl/dh_2048.pem 2048
-
-
 FROM nginx
 
 MAINTAINER Go About <tech@goabout.com>
 
 # Configure Nginx
-COPY --from=builder /etc/ssl/dh_2048.pem /etc/ssl/dh_2048.pem
+RUN apt-get -qq update && \
+    apt-get -qq install openssl && \
+    openssl dhparam -out /etc/ssl/dh_2048.pem 2048
 RUN mkdir -p /var/spool/nginx/client_temp
 
 RUN rm /etc/nginx/conf.d/default.conf
