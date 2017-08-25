@@ -10,6 +10,7 @@ RUN mkdir -p /var/spool/nginx/client_temp
 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /templates/etc/nginx/nginx.conf
+COPY status.conf /etc/nginx/conf.d/
 
 # Add templating entry point
 
