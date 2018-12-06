@@ -15,7 +15,7 @@ COPY status.conf /etc/nginx/conf.d/
 # Add templating entry point
 
 ADD https://github.com/jcassee/parameterized-entrypoint/releases/download/0.9.0/entrypoint_linux_amd64 /usr/local/bin/entrypoint
-RUN chmod +x /usr/local/bin/entrypoint
+RUN chmod +rx /usr/local/bin/entrypoint
 
 ENTRYPOINT ["entrypoint", "--"]
 CMD ["nginx"]
